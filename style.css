@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #faedcd;
+  flex-direction: column;
+}
+
+p {
+  padding: 0 10px;
+}
+
+#score-board {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#player2-score {
+  color: blue;
+}
+
+#player1-score {
+  color: red;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: 120px 120px 120px;
+  grid-template-rows: 120px 120px 120px;
+  justify-content: space-between;
+}
+
+.box {
+  background-color: white;
+  margin: 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 120px;
+}
+
+.crossed {
+  background-image: url("/images/X.png");
+  background-size: 120px 120px;
+}
+
+.circled {
+  background-image: url("/images/O.png");
+  background-size: 120px 120px;
+}
