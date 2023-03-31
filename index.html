@@ -6,27 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Samurai Tictactoe</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="boardAnimations.css" />
+    <script
+      src="https://kit.fontawesome.com/e866883547.js"
+      crossorigin="anonymous"
+    ></script>
     <script defer type="module" src="script.js"></script>
   </head>
   <body>
     <div id="score-board">
-      <div>
-        <p>player1: <span id="player1-score">0</span></p>
+      <div class="score-box">
+        <i class="fa-regular fa-x score-icon"></i><span class="colon">:</span
+        ><span id="player1-score">0</span>
       </div>
-      <div>
-        <p>player2: <span id="player2-score">0</span></p>
+      <div class="score-box">
+        <i class="fa-regular fa-circle score-icon"></i
+        ><span class="colon">:</span>
+        <span id="player2-score">0</span>
       </div>
     </div>
     <div id="game-board">
-      <div class="box" value="0"></div>
-      <div class="box" value="1"></div>
-      <div class="box" value="2"></div>
-      <div class="box" value="3"></div>
-      <div class="box" value="4"></div>
-      <div class="box" value="5"></div>
-      <div class="box" value="6"></div>
-      <div class="box" value="7"></div>
-      <div class="box" value="8"></div>
+      <div class="box activate-animation" value="0"></div>
+      <div class="box activate-animation" value="1"></div>
+      <div class="box activate-animation" value="2"></div>
+      <div class="box activate-animation" value="3"></div>
+      <div class="box activate-animation" value="4"></div>
+      <div class="box activate-animation" value="5"></div>
+      <div class="box activate-animation" value="6"></div>
+      <div class="box activate-animation" value="7"></div>
+      <div class="box activate-animation" value="8"></div>
     </div>
 
     <button id="reset-button">reset</button>
