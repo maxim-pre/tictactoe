@@ -19,7 +19,11 @@ const resetGame = (resetButton, board, game) => {
       box.classList.remove("activate-animation");
       void box.offsetWidth;
       box.classList.add("activate-animation");
+      if (box.classList.contains("strike")) {
+        box.parentNode.removeChild(box);
+      }
     });
+    board.re;
   });
 };
 
@@ -39,4 +43,16 @@ const getTargetSquare = (event) => {
   }
 };
 
-export { BoxAlreadyChecked, resetGame, addTokenToBox, getTargetSquare };
+const drawStrike = (winClass, gameBoard) => {
+  let strike = document.createElement("div");
+  strike.classList.add("strike", winClass, "activate-animation");
+  document.getElementById(gameBoard).appendChild(strike);
+};
+
+export {
+  BoxAlreadyChecked,
+  resetGame,
+  addTokenToBox,
+  getTargetSquare,
+  drawStrike,
+};

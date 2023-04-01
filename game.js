@@ -12,6 +12,16 @@ class Game {
       ["0", "4", "8"],
       ["2", "4", "6"],
     ];
+    this.winningPositions = [
+      "h-top",
+      "h-middle",
+      "h-bottom",
+      "v-left",
+      "v-middle",
+      "v-right",
+      "d-right",
+      "d-left",
+    ];
     this.player1 = [];
     this.player2 = [];
     this.turn = true;
@@ -29,6 +39,7 @@ class Game {
       if (this.checkWinCondition(this.player1, this.winConditions[i])) {
         this.player1Score += 1;
         this.gameEnd = true;
+        this.winningPosition = this.winningPositions[i];
         return true;
       }
     }
@@ -39,6 +50,7 @@ class Game {
       if (this.checkWinCondition(this.player2, this.winConditions[i])) {
         this.player2Score += 1;
         this.gameEnd = true;
+        this.winningPosition = this.winningPositions[i];
         return true;
       }
     }

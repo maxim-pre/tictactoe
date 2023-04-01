@@ -4,6 +4,7 @@ import {
   resetGame,
   addTokenToBox,
   getTargetSquare,
+  drawStrike,
 } from "./functions.js";
 
 let game = new Game();
@@ -29,10 +30,12 @@ board.addEventListener("click", (e) => {
   if (game.gameEnd === false) {
     if (game.player1Wins()) {
       document.querySelector("#player1-score").textContent = game.player1Score;
+      drawStrike(game.winningPosition, "game-board");
     }
 
     if (game.player2Wins()) {
       document.querySelector("#player2-score").textContent = game.player2Score;
+      drawStrike(game.winningPosition, "game-board");
     }
     if (game.draw()) {
       console.log("you both lost");

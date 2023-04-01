@@ -1,0 +1,46 @@
+.line {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: #52796f;
+  opacity: 50%;
+}
+.horizontal-top {
+  top: 33.3%;
+  left: 0%;
+}
+
+.horizontal-bottom {
+  transform-origin: top left;
+  top: 66.6%;
+  left: 100%;
+  transform: rotate(180deg);
+}
+
+.vertical-left {
+  transform-origin: top left;
+  top: 100%;
+  left: 33.3333%;
+  transform: rotate(270deg);
+}
+
+.vertical-right {
+  transform-origin: top left;
+  top: 0%;
+  left: 66.6666%;
+  transform: rotate(90deg);
+}
+
+.activate-animation {
+  animation: animate 0.5s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

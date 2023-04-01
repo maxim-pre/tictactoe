@@ -53,6 +53,7 @@ p {
   grid-template-rows: 150px 150px 150px;
   justify-content: space-between;
   margin-top: 100px;
+  position: relative;
 }
 .box {
   cursor: pointer;
@@ -81,11 +82,8 @@ p {
     background-size: 120px 120px;
   }
 
-  .circled {
-    background-size: 120px 120px;
-  }
-  .fa-x {
-    font-size: 50px;
+  .line-vertical-left {
+    transform: rotate(90deg) translateX(50%) translateY(50px);
   }
 
   .fa-circle {
