@@ -28,6 +28,9 @@ class Game {
     this.gameEnd = false;
     this.player1Score = 0;
     this.player2Score = 0;
+    this.draws = 0;
+    this.player1Token = "fa-solid fa-x";
+    this.player2Token = "fa-regular fa-circle";
   }
 
   checkWinCondition(arr, condition) {
@@ -61,7 +64,8 @@ class Game {
       this.player1.length + this.player2.length === 9 &&
       this.gameEnd === false
     ) {
-      this.game = true;
+      this.draws += 1;
+      this.gameEnd = true;
       return true;
     }
   }

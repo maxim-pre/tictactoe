@@ -20,10 +20,10 @@ board.addEventListener("click", (e) => {
   ) {
     if (game.turn) {
       game.addPlayer1(box.getAttribute("value"));
-      addTokenToBox(box, "fa-regular fa-x");
+      addTokenToBox(box, `${game.player1Token} board-token p1`);
     } else {
       game.addPlayer2(box.getAttribute("value"));
-      addTokenToBox(box, "fa-regular fa-circle");
+      addTokenToBox(box, `${game.player2Token} board-token p2`);
     }
     game.changeTurn();
   }
@@ -38,10 +38,35 @@ board.addEventListener("click", (e) => {
       drawStrike(game.winningPosition, "game-board");
     }
     if (game.draw()) {
-      console.log("you both lost");
+      document.querySelector("#draw-score").textContent = game.draws;
     }
   }
 });
 
 // adds functionality to reset button
 resetGame(resetButton, board, game);
+
+// update the saved icons in game object and change icons displayed in scoreboard
+document
+  .querySelector(".dropdown-content.p1")
+  .addEventListener("click", (e) => {
+    let iconClass = e.target.querySelector(".icon").className;
+    game.player1Token = iconClass;
+    let prevIcon = document.querySelector(".score-box.p1 .score-icon");
+    prevIcon.parentNode.removeChild(prevIcon);
+    let newIcon = document.createElement("li");
+    newIcon.className = `${iconClass} score-icon`;
+    document.querySelector(".score-box.p1").prepend(newIcon);
+  });
+
+document
+  .querySelector(".dropdown-content.p2")
+  .addEventListener("click", (e) => {
+    let iconClass = e.target.querySelector(".icon").className;
+    game.player2Token = iconClass;
+    let prevIcon = document.querySelector(".score-box.p2 .score-icon");
+    prevIcon.parentNode.removeChild(prevIcon);
+    let newIcon = document.createElement("li");
+    newIcon.className = `${iconClass} score-icon`;
+    document.querySelector(".score-box.p2").prepend(newIcon);
+  });

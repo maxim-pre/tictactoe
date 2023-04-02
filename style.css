@@ -1,12 +1,6 @@
 body {
   margin: 0;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #dad7cd;
-  flex-direction: column;
+  box-sizing: border-box;
 }
 
 p {
@@ -14,13 +8,26 @@ p {
 }
 
 #score-board {
-  position: absolute;
-  top: 0;
   display: flex;
+  position: sticky;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
   flex-direction: row;
+}
+
+.score-container {
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+}
+
+#dropdown-test {
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 .colon {
@@ -47,12 +54,26 @@ p {
   margin-left: 50px;
 }
 
+#draw-score {
+  font-size: 30px;
+  color: black;
+  margin-left: 50px;
+}
+
+#game-board-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  flex-direction: column;
+}
+
 #game-board {
   display: grid;
   grid-template-columns: 150px 150px 150px;
   grid-template-rows: 150px 150px 150px;
   justify-content: space-between;
-  margin-top: 100px;
   position: relative;
 }
 .box {
@@ -63,14 +84,24 @@ p {
   position: relative;
 }
 
-.fa-x {
+.board-token.p1 {
   color: blue;
   font-size: 60px;
 }
 
-.fa-circle {
-  color: blue;
+.board-token.p2 {
+  color: red;
   font-size: 60px;
+}
+
+.score-icon {
+  font-size: 30px;
+  color: black;
+}
+
+#reset-button {
+  padding: 5px 20px;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 650px), screen and (max-height: 500px) {
@@ -89,9 +120,4 @@ p {
   .fa-circle {
     font-size: 50px;
   }
-}
-
-.score-icon {
-  font-size: 30px;
-  color: black;
 }

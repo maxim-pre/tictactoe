@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="boardAnimations2.css" />
     <link rel="stylesheet" href="strikeClasses.css" />
+    <link rel="stylesheet" href="dropdown.css" />
     <script
       src="https://kit.fontawesome.com/e866883547.js"
       crossorigin="anonymous"
@@ -16,32 +17,64 @@
   </head>
   <body>
     <div id="score-board">
-      <div class="score-box">
-        <i class="fa-regular fa-x score-icon"></i><span class="colon">:</span
-        ><span id="player1-score">0</span>
+      <div id="dropdown-test">
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown</button>
+          <div class="dropdown-content p1">
+            <a href="#"><i class="icon fa-solid fa-x"></i></a>
+            <a href="#"><i class="icon fa-regular fa-circle"></i></a>
+            <a href="#"><i class="icon fa-regular fa-heart"></i></a>
+            <a href="#"><i class="icon fa-regular fa-square"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="score-box">
-        <i class="fa-regular fa-circle score-icon"></i
-        ><span class="colon">:</span>
-        <span id="player2-score">0</span>
+      <div class="score-container">
+        <div class="score-box p1">
+          <i class="fa-solid fa-xmark score-icon"></i
+          ><span class="colon">:</span><span id="player1-score">0</span>
+        </div>
+        <div class="score-box p2">
+          <i class="fa-regular fa-circle score-icon"></i
+          ><span class="colon">:</span>
+          <span id="player2-score">0</span>
+        </div>
+        <div class="score-box">
+          <i class="fa-solid fa-minus score-icon"></i
+          ><span class="colon">:</span>
+          <span id="draw-score">0</span>
+        </div>
+      </div>
+      <div id="dropdown-test">
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown</button>
+          <div class="dropdown-content p2">
+            <a href="#"><i class="icon fa-solid fa-x"></i></a>
+            <a href="#"><i class="icon fa-regular fa-circle"></i></a>
+            <a href="#"><i class="icon fa-regular fa-heart"></i></a>
+            <a href="#"><i class="icon fa-regular fa-square"></i></a>
+          </div>
+        </div>
       </div>
     </div>
-    <div id="game-board">
-      <div class="box" value="0"></div>
-      <div class="box" value="1"></div>
-      <div class="box" value="2"></div>
-      <div class="box" value="3"></div>
-      <div class="box" value="4"></div>
-      <div class="box" value="5"></div>
-      <div class="box" value="6"></div>
-      <div class="box" value="7"></div>
-      <div class="box" value="8"></div>
-      <div class="line horizontal-top activate-animation"></div>
-      <div class="line horizontal-bottom activate-animation"></div>
-      <div class="line vertical-left activate-animation"></div>
-      <div class="line vertical-right activate-animation"></div>
+    <div id="game-board-container">
+      <div id="game-board">
+        <div class="box" value="0"></div>
+        <div class="box" value="1"></div>
+        <div class="box" value="2"></div>
+        <div class="box" value="3"></div>
+        <div class="box" value="4"></div>
+        <div class="box" value="5"></div>
+        <div class="box" value="6"></div>
+        <div class="box" value="7"></div>
+        <div class="box" value="8"></div>
+        <div class="line horizontal-top activate-animation"></div>
+        <div class="line horizontal-bottom activate-animation"></div>
+        <div class="line vertical-left activate-animation"></div>
+        <div class="line vertical-right activate-animation"></div>
+      </div>
+      <button id="reset-button">
+        <i class="fa-solid fa-arrow-rotate-right score-icon"></i>
+      </button>
     </div>
-
-    <button id="reset-button">reset</button>
   </body>
 </html>
