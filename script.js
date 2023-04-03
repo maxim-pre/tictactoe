@@ -18,14 +18,36 @@ board.addEventListener("click", (e) => {
     !BoxAlreadyChecked(game, box.getAttribute("value")) &&
     game.gameEnd === false
   ) {
-    if (game.turn) {
+    //player vs player
+    if (game.mode === "pvp") {
+      if (game.turn) {
+        game.addPlayer1(box.getAttribute("value"));
+        addTokenToBox(box, `${game.player1Token} board-token p1`);
+      } else {
+        game.addPlayer2(box.getAttribute("value"));
+        addTokenToBox(box, `${game.player2Token} board-token p2`);
+      }
+      game.changeTurn();
+    }
+    //player vs easy computer
+    if (game.mode === "easy") {
       game.addPlayer1(box.getAttribute("value"));
       addTokenToBox(box, `${game.player1Token} board-token p1`);
-    } else {
-      game.addPlayer2(box.getAttribute("value"));
-      addTokenToBox(box, `${game.player2Token} board-token p2`);
+      let compSelection = game.EasyComputerSelection();
+      game.addPlayer2(compSelection);
+      let compBox = document.querySelector(`[value="${compSelection}"]`);
+      addTokenToBox(compBox, `${game.player2Token} board-token p2`);
     }
-    game.changeTurn();
+
+    //player vs hard computer
+    if (game.mode === "hard") {
+      game.addPlayer1(box.getAttribute("value"));
+      addTokenToBox(box, `${game.player1Token} board-token p1`);
+      let compSelection = game.hardComputerSelection();
+      game.addPlayer2(compSelection);
+      let compBox = document.querySelector(`[value="${compSelection}"]`);
+      addTokenToBox(compBox, `${game.player2Token} board-token p2`);
+    }
   }
   if (game.gameEnd === false) {
     if (game.player1Wins()) {
@@ -69,4 +91,10 @@ document
     let newIcon = document.createElement("li");
     newIcon.className = `${iconClass} score-icon`;
     document.querySelector(".score-box.p2").prepend(newIcon);
+  });
+
+document
+  .querySelector(".dropdown-content.modes")
+  .addEventListener("click", (e) => {
+    game.EasyComputerSelection();
   });

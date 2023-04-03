@@ -24,15 +24,10 @@ p {
   justify-content: center;
 }
 
-#dropdown-test {
+#dropdown-container {
   display: flex;
   justify-content: left;
   align-items: center;
-}
-
-.colon {
-  font-size: 40px;
-  margin-left: 10px;
 }
 
 .score-box {
@@ -42,22 +37,17 @@ p {
   padding: 20px;
 }
 
-#player2-score {
-  font-size: 30px;
-  color: black;
-  margin-left: 50px;
-}
-
-#player1-score {
-  font-size: 30px;
-  color: black;
-  margin-left: 50px;
-}
-
+#player2-score,
+#player1-score,
 #draw-score {
   font-size: 30px;
   color: black;
   margin-left: 50px;
+}
+
+.colon {
+  font-size: 40px;
+  margin-left: 10px;
 }
 
 #game-board-container {
@@ -104,20 +94,47 @@ p {
   margin-top: 20px;
 }
 
-@media screen and (max-width: 650px), screen and (max-height: 500px) {
+#mode-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+}
+
+@media screen and (max-width: 720px), screen and (max-height: 500px) {
   #game-board {
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
-  }
-  .crossed {
-    background-size: 120px 120px;
   }
 
   .line-vertical-left {
     transform: rotate(90deg) translateX(50%) translateY(50px);
   }
 
-  .fa-circle {
-    font-size: 50px;
+  .score-icon {
+    font-size: 15px;
+    color: black;
+  }
+
+  .score-box {
+    border-radius: 5px;
+    margin: 5px 5px 0px 5px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    padding: 10px;
+  }
+
+  .colon {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+
+  #player2-score,
+  #player1-score,
+  #draw-score {
+    font-size: 20px;
+    margin-left: 25px;
   }
 }

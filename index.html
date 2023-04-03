@@ -17,9 +17,9 @@
   </head>
   <body>
     <div id="score-board">
-      <div id="dropdown-test">
+      <div id="dropdown-container">
         <div class="dropdown">
-          <button class="dropbtn">Dropdown</button>
+          <button class="dropbtn">P1 icon</button>
           <div class="dropdown-content p1">
             <a href="#"><i class="icon fa-solid fa-x"></i></a>
             <a href="#"><i class="icon fa-regular fa-circle"></i></a>
@@ -30,8 +30,8 @@
       </div>
       <div class="score-container">
         <div class="score-box p1">
-          <i class="fa-solid fa-xmark score-icon"></i
-          ><span class="colon">:</span><span id="player1-score">0</span>
+          <i class="fa-regular fa-x score-icon"></i><span class="colon">:</span
+          ><span id="player1-score">0</span>
         </div>
         <div class="score-box p2">
           <i class="fa-regular fa-circle score-icon"></i
@@ -44,9 +44,9 @@
           <span id="draw-score">0</span>
         </div>
       </div>
-      <div id="dropdown-test">
+      <div id="dropdown-container">
         <div class="dropdown">
-          <button class="dropbtn">Dropdown</button>
+          <button class="dropbtn">P2 icon</button>
           <div class="dropdown-content p2">
             <a href="#"><i class="icon fa-solid fa-x"></i></a>
             <a href="#"><i class="icon fa-regular fa-circle"></i></a>
@@ -75,6 +75,18 @@
       <button id="reset-button">
         <i class="fa-solid fa-arrow-rotate-right score-icon"></i>
       </button>
+      <div id="mode-selection">
+        <div id="dropdown-container">
+          <div class="dropdown">
+            <button class="dropbtn">Mode</button>
+            <div class="dropdown-content modes">
+              <a>PVP</a>
+              <a>Easy ai</a>
+              <a>Impossible ai</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
