@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="boardAnimations2.css" />
     <link rel="stylesheet" href="strikeClasses.css" />
     <link rel="stylesheet" href="dropdown.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/e866883547.js"
       crossorigin="anonymous"
@@ -16,42 +22,43 @@
     <script defer type="module" src="script.js"></script>
   </head>
   <body>
-    <div id="score-board">
-      <div id="dropdown-container">
-        <div class="dropdown">
-          <button class="dropbtn">P1 icon</button>
-          <div class="dropdown-content p1">
-            <a href="#"><i class="icon fa-solid fa-x"></i></a>
-            <a href="#"><i class="icon fa-regular fa-circle"></i></a>
-            <a href="#"><i class="icon fa-regular fa-heart"></i></a>
-            <a href="#"><i class="icon fa-regular fa-square"></i></a>
+    <span id="sound" volume="0.5"></span>
+    <div id="menu">
+      <div id="mode-selection">
+        <div id="dropdown-container">
+          <div class="dropdown">
+            <button class="dropbtn">Modes</button>
+            <div class="dropdown-content modes">
+              <a value="pvp">PVP</a>
+              <a value="easy">Easy mode</a>
+              <a value="hard">Impossible mode</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="score-container">
-        <div class="score-box p1">
-          <i class="fa-regular fa-x score-icon"></i><span class="colon">:</span
-          ><span id="player1-score">0</span>
+      <div id="tokens-container">
+        <div id="dropdown-container" class="token-box">
+          <div class="dropdown">
+            <button class="dropbtn">Player1</button>
+            <div class="dropdown-content p1">
+              <a href="#"><i class="icon fa-solid fa-x"></i></a>
+              <a href="#"><i class="icon fa-regular fa-circle"></i></a>
+              <a href="#"><i class="icon fa-regular fa-heart"></i></a>
+              <a href="#"><i class="icon fa-regular fa-square"></i></a>
+              <a href="#"><i class="icon fa-regular fa-star"></i></a>
+            </div>
+          </div>
         </div>
-        <div class="score-box p2">
-          <i class="fa-regular fa-circle score-icon"></i
-          ><span class="colon">:</span>
-          <span id="player2-score">0</span>
-        </div>
-        <div class="score-box">
-          <i class="fa-solid fa-minus score-icon"></i
-          ><span class="colon">:</span>
-          <span id="draw-score">0</span>
-        </div>
-      </div>
-      <div id="dropdown-container">
-        <div class="dropdown">
-          <button class="dropbtn">P2 icon</button>
-          <div class="dropdown-content p2">
-            <a href="#"><i class="icon fa-solid fa-x"></i></a>
-            <a href="#"><i class="icon fa-regular fa-circle"></i></a>
-            <a href="#"><i class="icon fa-regular fa-heart"></i></a>
-            <a href="#"><i class="icon fa-regular fa-square"></i></a>
+        <div id="dropdown-container" class="token-box">
+          <div class="dropdown">
+            <button class="dropbtn">Player 2</button>
+            <div class="dropdown-content p2">
+              <a href="#"><i class="icon fa-solid fa-x"></i></a>
+              <a href="#"><i class="icon fa-regular fa-circle"></i></a>
+              <a href="#"><i class="icon fa-regular fa-heart"></i></a>
+              <a href="#"><i class="icon fa-regular fa-square"></i></a>
+              <a href="#"><i class="icon fa-regular fa-star"></i></a>
+            </div>
           </div>
         </div>
       </div>
@@ -72,19 +79,35 @@
         <div class="line vertical-left activate-animation"></div>
         <div class="line vertical-right activate-animation"></div>
       </div>
-      <button id="reset-button">
-        <i class="fa-solid fa-arrow-rotate-right score-icon"></i>
-      </button>
-      <div id="mode-selection">
-        <div id="dropdown-container">
-          <div class="dropdown">
-            <button class="dropbtn">Mode</button>
-            <div class="dropdown-content modes">
-              <a>PVP</a>
-              <a>Easy ai</a>
-              <a>Impossible ai</a>
+      <div id="score-board">
+        <div class="score-container">
+          <div class="score-box p1">
+            <p>PLAYER 1</p>
+            <div class="score-box-content">
+              <i class="fa-regular fa-x score-icon"></i
+              ><span class="colon">:</span><span id="player1-score">0</span>
             </div>
           </div>
+          <div class="score-box p2">
+            <p>PLAYER 2</p>
+            <div class="score-box-content">
+              <i class="fa-regular fa-circle score-icon"></i
+              ><span class="colon">:</span><span id="player2-score">0</span>
+            </div>
+          </div>
+          <div class="score-box">
+            <p>DRAWS</p>
+            <div class="score-box-content">
+              <i class="fa-solid fa-minus score-icon"></i
+              ><span class="colon">:</span>
+              <span id="draw-score">0</span>
+            </div>
+          </div>
+        </div>
+        <div class="score-box">
+          <button id="reset-button">
+            <i class="fa-solid fa-arrow-rotate-right score-icon"></i>
+          </button>
         </div>
       </div>
     </div>

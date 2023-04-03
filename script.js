@@ -5,11 +5,32 @@ import {
   addTokenToBox,
   getTargetSquare,
   drawStrike,
+  reset,
+  updateSavedIcons,
+  endRound,
 } from "./functions.js";
 
+//initialize game object
 let game = new Game();
+//save the game board object
 let board = document.querySelector("#game-board");
+//save the reset button
 const resetButton = document.querySelector("#reset-button");
+
+// adds functionality to reset button
+resetGame(resetButton, board, game);
+
+//adds an event listener to the dropdown menu for selecting new icons
+updateSavedIcons("1", game, board);
+updateSavedIcons("2", game, board);
+
+//adds an event listener to the dropdown menu for selecting different game modes
+document
+  .querySelector(".dropdown-content.modes")
+  .addEventListener("click", (e) => {
+    game.mode = e.target.getAttribute("value");
+    reset(board, game);
+  });
 
 board.addEventListener("click", (e) => {
   let box = getTargetSquare(e);
@@ -30,71 +51,31 @@ board.addEventListener("click", (e) => {
       game.changeTurn();
     }
     //player vs easy computer
-    if (game.mode === "easy") {
+    if (game.mode === "easy" && game.gameEnd == false) {
       game.addPlayer1(box.getAttribute("value"));
       addTokenToBox(box, `${game.player1Token} board-token p1`);
-      let compSelection = game.EasyComputerSelection();
-      game.addPlayer2(compSelection);
-      let compBox = document.querySelector(`[value="${compSelection}"]`);
-      addTokenToBox(compBox, `${game.player2Token} board-token p2`);
+      endRound(game);
+      if (game.gameEnd === false) {
+        let compSelection = game.EasyComputerSelection();
+        game.addPlayer2(compSelection);
+        let compBox = document.querySelector(`[value="${compSelection}"]`);
+        addTokenToBox(compBox, `${game.player2Token} board-token p2`);
+      }
     }
 
     //player vs hard computer
     if (game.mode === "hard") {
       game.addPlayer1(box.getAttribute("value"));
       addTokenToBox(box, `${game.player1Token} board-token p1`);
-      let compSelection = game.hardComputerSelection();
-      game.addPlayer2(compSelection);
-      let compBox = document.querySelector(`[value="${compSelection}"]`);
-      addTokenToBox(compBox, `${game.player2Token} board-token p2`);
+      endRound(game);
+      if (game.gameEnd === false) {
+        let compSelection = game.hardComputerSelection();
+        game.addPlayer2(compSelection);
+        let compBox = document.querySelector(`[value="${compSelection}"]`);
+        addTokenToBox(compBox, `${game.player2Token} board-token p2`);
+      }
     }
   }
-  if (game.gameEnd === false) {
-    if (game.player1Wins()) {
-      document.querySelector("#player1-score").textContent = game.player1Score;
-      drawStrike(game.winningPosition, "game-board");
-    }
 
-    if (game.player2Wins()) {
-      document.querySelector("#player2-score").textContent = game.player2Score;
-      drawStrike(game.winningPosition, "game-board");
-    }
-    if (game.draw()) {
-      document.querySelector("#draw-score").textContent = game.draws;
-    }
-  }
+  endRound(game);
 });
-
-// adds functionality to reset button
-resetGame(resetButton, board, game);
-
-// update the saved icons in game object and change icons displayed in scoreboard
-document
-  .querySelector(".dropdown-content.p1")
-  .addEventListener("click", (e) => {
-    let iconClass = e.target.querySelector(".icon").className;
-    game.player1Token = iconClass;
-    let prevIcon = document.querySelector(".score-box.p1 .score-icon");
-    prevIcon.parentNode.removeChild(prevIcon);
-    let newIcon = document.createElement("li");
-    newIcon.className = `${iconClass} score-icon`;
-    document.querySelector(".score-box.p1").prepend(newIcon);
-  });
-
-document
-  .querySelector(".dropdown-content.p2")
-  .addEventListener("click", (e) => {
-    let iconClass = e.target.querySelector(".icon").className;
-    game.player2Token = iconClass;
-    let prevIcon = document.querySelector(".score-box.p2 .score-icon");
-    prevIcon.parentNode.removeChild(prevIcon);
-    let newIcon = document.createElement("li");
-    newIcon.className = `${iconClass} score-icon`;
-    document.querySelector(".score-box.p2").prepend(newIcon);
-  });
-
-document
-  .querySelector(".dropdown-content.modes")
-  .addEventListener("click", (e) => {
-    game.EasyComputerSelection();
-  });

@@ -1,27 +1,38 @@
+* {
+  font-family: "Caveat";
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
+  background-image: url("https://img.freepik.com/premium-vector/fabric-seamless-texture_547648-757.jpg?w=740");
 }
 
 p {
   padding: 0 10px;
 }
 
-#score-board {
+#menu {
   display: flex;
-  position: sticky;
-  height: 100px;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 16px;
   flex-direction: row;
 }
 
-.score-container {
+#mode-selection {
+  margin: 0px 0px 0px 60px;
+}
+
+#tokens-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.token-box {
+  margin: 0px 60px 0px 0px;
 }
 
 #dropdown-container {
@@ -30,32 +41,12 @@ p {
   align-items: center;
 }
 
-.score-box {
-  border-radius: 10px;
-  margin: 10px 10px 0px 10px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  padding: 20px;
-}
-
-#player2-score,
-#player1-score,
-#draw-score {
-  font-size: 30px;
-  color: black;
-  margin-left: 50px;
-}
-
-.colon {
-  font-size: 40px;
-  margin-left: 10px;
-}
-
 #game-board-container {
   width: 100%;
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50px auto;
   flex-direction: column;
 }
 
@@ -65,6 +56,7 @@ p {
   grid-template-rows: 150px 150px 150px;
   justify-content: space-between;
   position: relative;
+  /* transform: translateY(-40px); */
 }
 .box {
   cursor: pointer;
@@ -84,27 +76,69 @@ p {
   font-size: 60px;
 }
 
-.score-icon {
-  font-size: 30px;
-  color: black;
-}
-
 #reset-button {
-  padding: 5px 20px;
-  margin-top: 20px;
+  padding: 5px 5px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-#mode-selection {
+#reset-button:hover {
+  font-size: 25px;
+}
+
+#score-board {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  position: absolute;
-  top: 15%;
-  left: 15%;
+  margin: 0 20px;
 }
 
-@media screen and (max-width: 720px), screen and (max-height: 500px) {
+.score-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-box {
+  border-radius: 10px;
+  margin: 10px 10px 0px 10px;
+  max-width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.score-box-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.colon {
+  font-size: 30px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+p {
+  font-size: 20px;
+}
+
+.score-icon {
+  color: black;
+}
+
+#player2-score,
+#player1-score,
+#draw-score {
+  color: black;
+  margin-left: 10px;
+  font-size: 25px;
+}
+
+@media screen and (max-width: 800px), screen and (max-height: 500px) {
   #game-board {
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
@@ -122,7 +156,6 @@ p {
   .score-box {
     border-radius: 5px;
     margin: 5px 5px 0px 5px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     padding: 10px;
   }
 
@@ -131,10 +164,10 @@ p {
     margin-left: 5px;
   }
 
-  #player2-score,
-  #player1-score,
-  #draw-score {
-    font-size: 20px;
-    margin-left: 25px;
+  .token-box {
+    margin: 0 10px;
+  }
+  p {
+    font-size: 16px;
   }
 }
