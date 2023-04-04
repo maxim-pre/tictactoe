@@ -95,10 +95,10 @@ player1 = ["0", "4", "2", "1"];
 player2 = ["2", "6", "7"];
 
 for each condition in winConditions
-    if every value in player1 is in condition
+    if every value in condition is in player1
         player 1 wins
 
-    if every value in player2 is in condition
+    if every value in condition is in player2
         player 2 wins
 
 if the total length of player1 + player2 is equal to 9
