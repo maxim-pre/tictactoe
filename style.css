@@ -5,7 +5,8 @@
 body {
   margin: 0;
   box-sizing: border-box;
-  background-image: url("https://img.freepik.com/premium-vector/fabric-seamless-texture_547648-757.jpg?w=740");
+  background-image: url("https://img.freepik.com/free-photo/white-paper-texture_1194-5416.jpg?w=826&t=st=1680597893~exp=1680598493~hmac=d1c15064dd439e95813763ac3f7378bb50d37f0e009532bb1991feab9fcb0d89");
+  background-size: cover;
 }
 
 p {
