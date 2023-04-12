@@ -2,9 +2,11 @@
 
 **Developer**: Maxim Prestwich
 
-**Project Goal**: Build and deploy a tictactoe web application from scratch using html, css and JavaScript
+**Project Goal**: In one week Build and deploy a tictactoe web application from scratch using html, css and JavaScript
 
 **Deployment Link**: https://maxim-pre.github.io/tictactoe/
+
+**Installation**: Run --> git clone https://github.com/maxim-pre/tictactoe.git
 
 # Technical Requirements
 
