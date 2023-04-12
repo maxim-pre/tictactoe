@@ -4,6 +4,8 @@
 
 **Project Goal**: Build and deploy a tictactoe web application from scratch using html, css and JavaScript
 
+**Deployment Link**: https://maxim-pre.github.io/tictactoe/
+
 # Technical Requirements
 
 - Render a game board in the browser
@@ -120,7 +122,7 @@ scoringSystem {
 }
 ```
 
-<img src="./images/minimax.png"/>
+<img src="./images/minimax_diagram.png"/>
 
 The computer takes the current board position as the root node on the tree and traverses down assessiing each possible outcome.
 
