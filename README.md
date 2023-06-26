@@ -204,10 +204,6 @@ The most challenging part of this project for me was implementing the board anim
 }
 ```
 
-## Challenges
-
-My Biggest challenge was working with CSS. I expecially struggeled to implement the board animations that occur when the game is reset.
-
 ## Wins
 
 Im very happy with my implementation of computer opponent AI. I was able to implement an algorithm that's unbeatable
