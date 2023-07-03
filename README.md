@@ -2,7 +2,7 @@
 
 **Developer**: Maxim Prestwich
 
-**Project Goal**: In one week Build and deploy a tictactoe web application from scratch using html, css and JavaScript
+**Project Goal**: In one week Build and deploy a tictactoe web application from scratch using HTML, CSS and JavaScript
 
 **Deployment Link**: https://maxim-pre.github.io/tictactoe/
 
@@ -23,7 +23,7 @@ This was an individual project that was completed in one week as part of my soft
 
   - **Git** software ran locally on my PC to keep track of project changes
 
-  - **GitHub** cload based hosing service allowing me to manage the repository remotely
+  - **GitHub** Cloud based hosing service allowing me to manage the repository remotely
 
 - Developer Tools
   - **Ubuntu** used to interact with project
@@ -61,7 +61,7 @@ Planning this project involved drawing a basic wireframe and writing user storie
 ### UserStories
 
 - As a user I should be able to reset a game so that I can cancel a match
-- As a user I should be able to see a score board so that I can keep track of my wins and losses
+- As a user I should be able to see a scoreboard so that I can keep track of my wins and losses
 - As a user I should be able to select from a list of game modes so I can decide if I would like to play with a friend or against the computer
 - As a user I should be able to choose from a range of tokens so I don't have to always play as the crosses
 
@@ -75,7 +75,7 @@ A Player can win by placing their icons on three adjacent tiles either:
 - Vertically
 - Diagonally
 
-To solive this I gave each box in the game board a unique value (0-8) and saved variable with all the win conditions. When A player selects a box, the box value is pushed to thier array.
+To solve this I gave each box in the game board a unique value (0-8) and saved an arrary containing all winning combinations by index. When A player selects a box, the box value is pushed to their array.
 
 ```html
 <div id="game-board">
@@ -133,9 +133,9 @@ if the total length of player1 + player2 is equal to 9
 
 <strong><font size=4>implementing the impossible AI</font></strong>
 
-The impossible computer opponent was implemented using the **minimax** algorithm, a recursive algorithm for chosing the next best move.
+The impossible computer opponent was implemented using the **minimax** algorithm, a recursive algorithm for choosing the next best move.
 
-The minimax algorithm is called whenever its the computers turn to pick and uses a simple scoring system to determine the strength of each move based on the potential outcomes.
+The minimax algorithm is called whenever it's the computers turn to pick and uses a simple scoring system to determine the strength of each move based on the potential outcomes.
 
 ```
 scoringSystem {
@@ -147,7 +147,7 @@ scoringSystem {
 
 <img src="./images/minimax_diagram.png"/>
 
-The computer takes the current board position as the root node on the tree and traverses down assessiing each possible outcome.
+The computer takes the current board position as the root node on the tree and traverses down assessing each possible outcome.
 
 - The computer will always take the shortest distance to victory, so in the example above, even though there are two paths to victory the computer will select option 2
 
@@ -206,12 +206,12 @@ The most challenging part of this project for me was implementing the board anim
 
 ## Wins
 
-Im very happy with my implementation of computer opponent AI. I was able to implement an algorithm that's unbeatable
+I'm very happy with my implementation of computer opponent AI. I was able to implement an algorithm that's unbeatable
 
 ## Key Learnings/Takeaways
 
-A key takeaway was the volume of code and time it takes to implement animations for a website. Subtle animations can improve the user experience but too much animation can be over-bearing. In the futre I would limit time spend on implementing animations and focus more on other areas of the project.
+A key takeaway was the volume of code and time it takes to implement animations for a website. Subtle animations can improve the user experience but too much animation can be overbearing. In the future I would limit the time spent on implementing animations and focus more on other areas of the project.
 
 ## Future improvements
 
-- I would like to add the ability for users to save their scores to localhost so players can resume thier games at another time.
+- I would like to add the ability for users to save their scores to localhost so players can resume their games at another time.
